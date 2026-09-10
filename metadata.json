@@ -1,0 +1,8 @@
+{
+  "name": "Remix Pendampingan Sistem HACCP SPPG MBG — Progresivo Consulting",
+  "description": "Landing page resmi pendampingan sistem HACCP untuk SPPG MBG oleh Progresivo Consulting. Membangun sistem, implementasi, pelatihan, dan persiapan sertifikasi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
