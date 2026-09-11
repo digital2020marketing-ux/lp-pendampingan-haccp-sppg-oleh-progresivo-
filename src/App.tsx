@@ -2,11 +2,17 @@ import React, { Suspense, lazy, useEffect } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { MobileStickyBar } from './components/MobileStickyBar';
+import { trackMetaEvent } from './utils/metaPixel';
 
 // Lazy load below-the-fold content for instant LCP and initial paint
 const DeferredSections = lazy(() => import('./components/DeferredSections'));
 
 export default function App() {
+  // Fire Meta PageView event (Pixel + Conversions API deduplication)
+  useEffect(() => {
+    trackMetaEvent({ eventName: 'PageView' });
+  }, []);
+
   // Preload deferred sections during idle time immediately after critical mount
   useEffect(() => {
     if (typeof window !== 'undefined') {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
 import { createWhatsAppUrl } from '../data/haccpData';
+import { trackWhatsAppClick } from '../utils/metaPixel';
 
 interface MobileStickyBarProps {
   isContained?: boolean;
@@ -17,6 +18,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ isContained })
         <a
           id="mobile-sticky-wa-bar"
           href={createWhatsAppUrl()}
+          onClick={() => trackWhatsAppClick('Sticky Bar Mobile')}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full flex items-center justify-center gap-2.5 bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white py-3.5 px-4 rounded-xl font-black text-sm shadow-lg shadow-emerald-950/80 active:scale-98 transition-all"

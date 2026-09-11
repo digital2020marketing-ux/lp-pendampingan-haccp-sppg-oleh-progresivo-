@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, MessageCircle, ShieldCheck, MapPin, Building } from 'lucide-react';
 import { WHATSAPP_NUMBER, createWhatsAppUrl } from '../data/haccpData';
+import { trackWhatsAppClick } from '../utils/metaPixel';
 
 export const FinalCtaSection: React.FC = () => {
   return (
@@ -32,6 +33,7 @@ export const FinalCtaSection: React.FC = () => {
           <a
             id="final-cta-wa-btn"
             href={createWhatsAppUrl()}
+            onClick={() => trackWhatsAppClick('Final CTA Section')}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white py-3.5 px-5 rounded-xl text-sm font-black shadow-xl shadow-emerald-950/80 active:scale-98 transition-all"

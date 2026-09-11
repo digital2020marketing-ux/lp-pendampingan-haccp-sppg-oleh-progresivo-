@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ShieldCheck, MessageCircle, Menu, X, PhoneCall } from 'lucide-react';
 import { WHATSAPP_NUMBER, createWhatsAppUrl } from '../data/haccpData';
+import { trackWhatsAppClick } from '../utils/metaPixel';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,6 +68,7 @@ export const Header: React.FC = () => {
             <a
               id="header-cta-wa"
               href={createWhatsAppUrl()}
+              onClick={() => trackWhatsAppClick('Header Top Button')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-md shadow-emerald-950/40 active:scale-95 transition-all"
@@ -106,6 +108,7 @@ export const Header: React.FC = () => {
             <div className="pt-2 mt-1 border-t border-slate-800">
               <a
                 href={createWhatsAppUrl()}
+                onClick={() => trackWhatsAppClick('Header Dropdown Menu')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-2.5 rounded-lg text-xs font-bold shadow-sm"

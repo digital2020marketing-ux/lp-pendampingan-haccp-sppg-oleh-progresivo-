@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, MapPin, MessageCircle } from 'lucide-react';
 import { WHATSAPP_NUMBER, createWhatsAppUrl } from '../data/haccpData';
+import { trackWhatsAppClick } from '../utils/metaPixel';
 
 export const Footer: React.FC = () => {
   return (
@@ -57,6 +58,7 @@ export const Footer: React.FC = () => {
             <MessageCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
             <a 
               href={createWhatsAppUrl()} 
+              onClick={() => trackWhatsAppClick('Footer WhatsApp Link')}
               target="_blank" 
               rel="noopener noreferrer"
               className="text-emerald-400 font-bold"

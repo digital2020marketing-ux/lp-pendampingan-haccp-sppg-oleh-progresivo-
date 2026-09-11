@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sliders, MapPin, Check, MessageCircle } from 'lucide-react';
 import { createWhatsAppUrl } from '../data/haccpData';
+import { trackWhatsAppClick } from '../utils/metaPixel';
 
 export const CustomizedProgramSection: React.FC = () => {
   return (
@@ -60,6 +61,7 @@ export const CustomizedProgramSection: React.FC = () => {
           <a
             id="program-info-wa-btn"
             href={createWhatsAppUrl()}
+            onClick={() => trackWhatsAppClick('Customized Program Section')}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs sm:text-sm shadow-md active:scale-98 transition-all"

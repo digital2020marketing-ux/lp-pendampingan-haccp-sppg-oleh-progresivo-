@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { LeadFormData } from '../types';
 import { WHATSAPP_NUMBER, createWhatsAppUrl } from '../data/haccpData';
+import { trackLeadSubmission } from '../utils/metaPixel';
 
 export const LeadFormSection: React.FC = () => {
   const [formData, setFormData] = useState<LeadFormData>({
@@ -26,6 +27,9 @@ export const LeadFormSection: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Trigger Meta Pixel & Conversions API Lead Event with deduplication & user data
+    trackLeadSubmission(formData);
 
     const waUrl = createWhatsAppUrl({
       nama: formData.nama,
